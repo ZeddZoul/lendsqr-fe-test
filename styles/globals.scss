@@ -1,0 +1,24 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir'), url(../fonts/avenir_ff/AvenirLTStd-Book.otf) format('truetype');
+}
+   ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #39cdcc;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($color: #39cdcc, $amount: 20);
+  }
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');

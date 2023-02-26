@@ -1,0 +1,13 @@
+.pagination{
+  display: flex;
+  gap: 5px;
+    button{
+    height: 20px;
+    width: 20px;
+    border: 2px solid rgba(48, 34, 208, 0.526);
+    background-color: white;
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
+}

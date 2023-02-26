@@ -1,0 +1,120 @@
+@mixin form() {
+  height: 50px;
+  margin-block: 15px;
+  width: 40vw;
+  border-radius: 3px;
+  font-family: "Avenir", sans-serif;
+}
+
+.logo {
+  height: 36px;
+  margin: 5% 0 2% 10%;
+}
+.Signin {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Avenir", sans-serif;
+  margin: 10px;
+  &_image {
+    width: 45vw;
+    margin-top: 50px;
+  }
+
+  &_form {
+    width: max-content;
+    padding: 10px;
+    display: block;
+    h2 {
+      font-weight: 900;
+      font-size: 35px;
+      color: #213f7d;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 15px;
+      color: #545f7d;
+    }
+    &_input_wrapper {
+      margin-top: 50px;
+      h5 {
+        color: #39cdcc;
+        margin-bottom: 30px;
+        cursor: pointer;
+        width: max-content;
+        &:hover {
+          color: darken(#39cdcc, 15);
+        }
+      }
+      input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+      div {
+        @include form();
+        border: 1px solid grey;
+        padding: 2px;
+        position: relative;
+        input{
+          padding-left: 5px;
+        }
+        p {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          font-size: 13px;
+          color: #39cdcc;
+          cursor: pointer;
+          &:hover {
+            color: darken(#39cdcc, 15);
+          }
+        }
+      }
+      button {
+        @include form();
+        border: none;
+        background-color: #39cdcc;
+        color: white;
+        font-size: 14px;
+        margin-bottom: 0px;
+        &:hover {
+          background-color: darken(#39cdcc, 15);
+        }
+      }
+    }
+  }
+}
+//Tablet breakpoint
+@media (max-width: 1000px) {
+  .Signin {
+    &_image {
+      width: 50vw;
+   
+    }
+  }
+}
+//mobile breakpoint
+@media (max-width: 800px) {
+.logo{
+  height: 25px;
+}
+    .Signin {
+
+    &_image {
+    display: none;
+    }
+      &_form {
+    width: 85%;
+    div{
+      width: 100%;
+    }
+    button{
+      width: 100%;
+
+    }
+      }
+
+    }
+}

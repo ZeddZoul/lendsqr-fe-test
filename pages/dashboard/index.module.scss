@@ -1,0 +1,120 @@
+.table_container {
+  margin: 0 auto;
+  display: block;
+  width: 80vw;
+  background-color: #f8f8f8;
+  padding: 10px;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+.dashboard {
+  color: #213f7d;
+  border-collapse: collapse;
+  margin: 10px auto;
+  padding: 20px;
+  table-layout: fixed;
+  font-family: "work sans";
+  font-size: 14px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  tr {
+    padding: 0.35em;
+  }
+
+  td {
+    padding: 10px 4px;
+    border-bottom: 1px solid #ccc;
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      white-space: nowrap;
+      padding: 4px 8px;
+    }
+  }
+  td[data-label="status"] {
+    span {
+      width: max-content;
+    }
+  }
+  td:last-child {
+    display: none;
+  }
+
+  th {
+    padding: 10px;
+    font-size: 0.85em;
+    word-break: keep-all;
+    text-transform: uppercase;
+    text-align: left;
+    img {
+      height: 8px;
+      width: 9px;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard {
+    border: 0;
+    width: 80%;
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8em;
+      span {
+        width: auto;
+        max-width: none;
+        cursor: pointer;
+        margin-top: -3px;
+      }
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      &:last-child {
+        border-bottom: 0;
+        display: block;
+        // padding: 40px;
+        margin-bottom: 15px;
+
+        b {
+          display: none;
+        }
+        &::before {
+          content: attr(data-label);
+          text-align: center;
+          font-weight: bold;
+          text-transform: uppercase;
+          width: 100%;
+          cursor: pointer;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

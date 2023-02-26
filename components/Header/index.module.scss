@@ -1,0 +1,146 @@
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+}
+.header {
+  position:sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Work Sans", sans-serif;
+  padding-right: 10px;
+  padding-block: 10px;
+  background: white;
+  z-index: 4;
+  .left {
+    .menu_btn{
+      display: none;
+        font-size: 40px;
+      color:#213F7D;
+      font-weight: 300;
+      cursor: pointer;
+      @media (max-width:900px) {
+        display: block;
+      }
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+    form {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(196, 190, 190, 0.367);
+      border-radius: 5px;
+      width: 50%;
+      font-size: 18px;
+
+      .search {
+        height: 40px;
+        border: none;
+      }
+      input.search {
+        width: 100%;
+        padding-left: 10px;
+        border-radius: 5px;
+        outline: none;
+        font-family: "Work Sans", sans-serif;
+        font-size: 16px;
+        &::placeholder {
+          color: rgba(152, 151, 151, 0.555);
+        }
+      }
+      button.search {
+        width: 55px;
+        background: #39cdcc;
+        cursor: pointer;
+        // border: 1px solid  rgba(152, 151, 151, 0.555);
+        // border-left: none;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        &:hover {
+          background: darken(#39cdcc, 5);
+        }
+      }
+    }
+
+    &>img{
+height: 30px
+    }
+  }
+  .right {
+    @include flex;
+    width: max-content;
+    gap: 20px;
+    font-family: "Work Sans", sans-serif;
+    & > img {
+      height: 15px;
+      cursor: pointer;
+    }
+  }
+
+  span {
+    @include flex;
+    font-family: "Work Sans", sans-serif;
+    img {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+  }
+}
+// tablet breakpoint
+@media (max-width: 1000px) {
+.header{
+  .left{
+    width: 60vw;
+    form{
+      width: 60%;
+    }
+  }
+      .right {
+    width: 25vw;
+  }
+}
+}
+//mobile breakpoint
+@media (max-width: 800px) {
+  
+.header{
+  
+  .left{
+       &>img{
+height: 25px
+    }
+    width: 100%;
+       .menu_btn{
+      display: block;
+    
+    }
+    form{
+      width: 50%;
+    }
+  }
+      .right {
+   display:none;
+  }
+}
+}
+//smaller
+@media (max-width: 500px) {
+  
+.header{
+  
+  .left{
+    width: max-content;
+    gap: 20px;
+    form{
+     display: none;
+    }
+  }
+
+}
+}

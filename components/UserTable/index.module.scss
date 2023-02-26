@@ -1,0 +1,34 @@
+@mixin style() {
+  padding: 2px 4px;
+  border-radius: 50px;
+  text-align: center;
+  width: min-content;
+}
+.Inactive {
+  span {
+    color: #545f7d;
+    background-color: #545f7d20;
+    @include style;
+  }
+}
+.Pending {
+  span {
+    color: #e9b200;
+    background-color: #e9b30020;
+    @include style;
+  }
+}
+.Blacklisted {
+  span {
+    @include style;
+    color: #e4033b;
+    background-color: #e4033b20;
+  }
+}
+.Active {
+  span {
+    color: #39cd62;
+    background-color: #39cd6220;
+    @include style;
+  }
+}

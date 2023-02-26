@@ -1,0 +1,70 @@
+.Sidebar {
+  font-family: "work sans";
+  color: #213f7d;
+  opacity: 0.85;
+  max-height: 95vh;
+  min-height: 400px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #39cdcc;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($color: #39cdcc, $amount: 20);
+  }
+
+  > strong {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+    padding-inline: 15px;
+  }
+  small,
+  h5 {
+    padding-inline: 15px;
+  }
+  h5 {
+    font-size: small;
+    opacity: 0.8;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block: 10px;
+    li {
+      font-size: smaller;
+      font-family: "work sans";
+      padding-inline: 10px;
+      padding-block: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 5px solid white;
+      cursor: pointer;
+      &:hover {
+        transition: all 0.25s linear;
+        border-left: 5px solid darken(white, 30);
+        background-color: darken(white, 5);
+      }
+    }
+    &:first-of-type {
+      li:first-child {
+        background-color: #39cdcd5e;
+        border-left: 5px solid darken($color: #39cdcc, $amount: 10);
+      }
+    }
+  }
+
+    @media (max-width: 900px) {
+    display: none;
+  }
+}

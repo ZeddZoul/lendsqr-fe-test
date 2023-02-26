@@ -1,6 +1,25 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.scss";
+import type { AppProps } from "next/app";
+import { ComponentType, ReactNode } from "react";
+import { useRouter } from "next/router";
+type AppPropsWithLayout = AppProps & {
+  Component: AppProps["Component"] & {
+    pageLayout?: ComponentType<{ children?: ReactNode }>;
+  };
+};
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const router = useRouter();
+  let comp = Component.pageLayout ? (
+    <>
+      {" "}
+      <Component.pageLayout>
+      <Component key={router.asPath} {...pageProps} />
+      </Component.pageLayout>
+    </>
+  ) : (
+    <Component {...pageProps} />
+  );
+  return comp;
 }
+export default App;
