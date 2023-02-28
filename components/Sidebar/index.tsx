@@ -3,7 +3,7 @@ import React from 'react'
 import s from "./index.module.scss"
 import caret from "@/public/icons/rev-caret.svg"
 import briefcase from "@/public/icons/briefcase.svg"
-import Home from "@/public/icons/Home.svg"
+import Home from "@/public/icons/home.svg"
 import Fees from "@/public/icons/Fees.svg"
 import pricing from "@/public/icons/pricing.svg"
 import logs from "@/public/icons/logs.svg"
