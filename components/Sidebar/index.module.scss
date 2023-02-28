@@ -5,6 +5,9 @@
   max-height: 95vh;
   min-height: 400px;
   overflow-y: auto;
+  position: sticky;
+  top: 100px;
+  left: 0;
   &::-webkit-scrollbar {
     width: 5px;
   }

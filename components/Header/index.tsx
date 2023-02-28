@@ -31,7 +31,7 @@ const Header = () => {
           <p>Adedeji v</p>
         </span>
       </div>
-    </div>
+    </div> 
   );
 }
 

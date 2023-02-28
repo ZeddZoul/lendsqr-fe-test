@@ -1,11 +1,45 @@
 .table_container {
   margin: 0 auto;
   display: block;
-  width: 80vw;
+  width: 83vw;
   background-color: #f8f8f8;
   padding: 10px;
   @media (max-width: 900px) {
     width: 100%;
+  }
+}
+
+.stats {
+  font-family: "work sans";
+  padding-top: 20px;
+  align-self: center;
+  > h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #213f7dd4;
+  }
+  > div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-block: 25px;
+    .card {
+      min-width: 120px;
+      width: 24%;
+
+      h3 {
+        font-size: 14px;
+        color: grey;
+        font-weight: 400;
+      }
+      h2 {
+        color: #21407dd4;
+        font-size: 22px;
+      }
+      padding: 20px;
+      background: white;
+      border-radius: 5px;
+    }
   }
 }
 .dashboard {
@@ -19,8 +53,10 @@
   width: 100%;
   border-radius: 10px;
   background-color: white;
+
   tr {
     padding: 0.35em;
+    position: relative;
   }
 
   td {
@@ -42,7 +78,51 @@
     }
   }
   td:last-child {
-    display: none;
+    position: relative;
+    flex-direction: row-reverse;
+    text-align: center;
+    button{
+      border: none;
+      background: none;
+      font-size: 20px;
+      font-weight: 400;
+      width: 30px;
+      height: 30px;
+      transition: all .25s linear;
+      border-radius: 50%;
+      &:hover{
+        background-color: #01133729;
+        cursor: pointer;
+      }
+    }
+    >div{
+      position: absolute;
+      top: 0;
+      left: -100px;
+      z-index: 2;
+      display: flex;
+      background-color: white;
+      border: 4px;
+      gap: 3px;
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(216, 214, 214, 0.745);
+      a, p{
+        display: flex;
+        color: #213f7d;
+        text-decoration: none;
+        align-items: center;
+        gap: 10px;
+        border-left: 2px solid #ffffff00;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 2px;
+        &:hover{
+          transition: all .15s linear;
+          background-color: #01133729;
+          border-left: 2px solid #001133
+        }
+      }
+    }
   }
 
   th {
@@ -114,6 +194,15 @@
           cursor: pointer;
           padding: 5px;
         }
+      }
+    }
+  }
+  .stats {
+    width: 80%;
+    margin: auto;
+    > div {
+      .card {
+        width: 48%;
       }
     }
   }
