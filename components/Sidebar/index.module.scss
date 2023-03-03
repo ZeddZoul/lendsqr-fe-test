@@ -6,7 +6,7 @@
   min-height: 400px;
   overflow-y: auto;
   position: sticky;
-  top: 100px;
+  top: 10px;
   left: 0;
   &::-webkit-scrollbar {
     width: 5px;
@@ -23,14 +23,14 @@
     background: darken($color: #39cdcc, $amount: 20);
   }
 
-  > strong {
+  > small, >strong {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: small;
     padding-inline: 15px;
   }
-  small,
+ 
   h5 {
     padding-inline: 15px;
   }

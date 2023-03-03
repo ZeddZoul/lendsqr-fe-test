@@ -10,6 +10,7 @@ import logs from "@/public/icons/logs.svg"
 import reports from "@/public/icons/reports.svg"
 import preferences from "@/public/icons/preferences.svg"
 import serviceAcc from "@/public/icons/service-acc.svg"
+import logOut from "@/public/icons/sign-out.svg"
 import settlement from "@/public/icons/settlement.svg"
 import loans from "@/public/icons/loans.svg"
 import karma from "@/public/icons/karma.svg"
@@ -123,6 +124,17 @@ const Sidebar = () => {
         <li>
           <Image src={logs} alt="" />
           Audit Logs
+        </li>
+      </ul>
+      <hr style={{ color: "blue" }} />
+      <ul>
+        <li>
+          <Image src={logOut} alt="" />
+          Log out
+        </li>
+        <li>
+          {" "}
+          <small>v1.2.0</small>
         </li>
       </ul>
       <br />
